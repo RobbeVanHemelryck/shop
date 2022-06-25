@@ -1,0 +1,12 @@
+ErrorDocument 404 https://projects.taltiko.com/shop/404.php
+ErrorDocument 403 https://projects.taltiko.com/shop/403.php
+
+RewriteEngine on
+
+Options All -Indexes
+
+RewriteBase /shop/
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
