@@ -17,5 +17,5 @@
 		}
 		echo '</div>';
 	}
-	// setcookie("errors", null, 1, '/');
+	setcookie("errors", null, 1, '/');
 ?>

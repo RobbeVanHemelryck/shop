@@ -1,10 +1,10 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
 
 class FacebookController{
 
 	static function getLoginUrl(){
-		require_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload-fb2.php";
+		require_once $_SERVER['DOCUMENT_ROOT'] . "/shop/vendor/autoload-fb2.php";
 
 		//De URL van waar de login aangeroepen werd bewaren, opdat deze bruikbaar is na de redirect van Facebook
 		$_SESSION["fb-login-prev"] = str_replace("/shop/", "", $_SERVER['REQUEST_URI']);
@@ -19,12 +19,12 @@ class FacebookController{
 		$permissions = ['email', 'user_likes'];
 		$helper = $facebook->getRedirectLoginHelper();
 
-		return $helper->getLoginUrl($_SERVER['DOCUMENT_ROOT'] . 'controllers/RequestController.php?fb-login-redirect=true', $permissions);
+		return $helper->getLoginUrl(URL . 'controllers/RequestController.php?fb-login-redirect=true', $permissions);
 	}
 	static function login(){
 		global $REDS, $GREENS;
 
-		require_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload-fb2.php";
+		require_once $_SERVER['DOCUMENT_ROOT'] . "/shop/vendor/autoload-fb2.php";
 		$facebook = new Facebook\Facebook([
 		  'app_id' => '1977960159102628',
 		  'app_secret' => '8a8a6a382c777fc989e12fc528ad2f25',

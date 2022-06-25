@@ -1,6 +1,6 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
 
 class LevermethodeModel {
     static function getAllLevermethoden() {

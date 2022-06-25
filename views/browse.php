@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
 
 	//Filters
 	/*$filters = !empty($_POST["filters"])? $_POST["filters"] : [];*/

@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
 	error_reporting(E_ALL);
 	ini_set("display_errors","On");
 

@@ -4,14 +4,14 @@ Deze klasse dient voor het groeperen van dynamische HTML code
 --> 1 functie voor zowel GET's via PHP als via AJAX
 */
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
 
 class ContentController{
 	static function makeProductHtml($product){
 		$cat = CategorieModel::getCategorie($product->categorie);
 		$html = "<div class='product-cont-main'>"
-				. "<a href='/views/detail.php?id=" . $product->id . "' class='product-cont-sub'>"
-			 	 . "<div class='img-height-helper'><img src='/resources/images/" . $product->img_path . "' class='product-thumbnail' alt='Deze afbeelding kon niet gevonden worden'></div><hr-small></hr-small>"
+				. "<a href='" . URL . "views/detail.php?id=" . $product->id . "' class='product-cont-sub'>"
+			 	 . "<div class='img-height-helper'><img src='" . URL . "resources/images/" . $product->img_path . "' class='product-thumbnail' alt='Deze afbeelding kon niet gevonden worden'></div><hr-small></hr-small>"
 				 . "<div class='product-caption scroll-none'>"
 					 . "<h4>" . $product->naam . "</h4>"
 					 . "<p>" . $cat->naam . "</p>"
@@ -31,9 +31,9 @@ class ContentController{
 		
 		if($product->aantal_ratings > 0){
 			for($j = 0; $j < 5; $j++){
-				if($rating > 1.5) $html .= "<img src='/resources/images/star-full.png' class='product-star'>";
-				else if($rating > 0.5 && $rating <= 1.5) $html .= "<img src='/resources/images/star-half.png' class='product-star'>";
-				else if($rating <= 0.5) $html .= "<img src='/resources/images/star-empty.png' class='product-star'>";
+				if($rating > 1.5) $html .= "<img src='" . URL . "resources/images/star-full.png' class='product-star'>";
+				else if($rating > 0.5 && $rating <= 1.5) $html .= "<img src='" . URL . "resources/images/star-half.png' class='product-star'>";
+				else if($rating <= 0.5) $html .= "<img src='" . URL . "resources/images/star-empty.png' class='product-star'>";
 				$rating -= 2;
 			}
 		}
@@ -43,7 +43,7 @@ class ContentController{
 	}
 
 	static function makeWinkelmandjePreviewHtml(){
-		$html = "<a href='/views/winkelmandje.php' class='nav-winkelmandje-dropdown-item' id='nav-winkelmandje-dropdown-item-first'>Bekijk volledig winkelmandje</a>";
+		$html = "<a href='" . URL . "views/winkelmandje.php' class='nav-winkelmandje-dropdown-item' id='nav-winkelmandje-dropdown-item-first'>Bekijk volledig winkelmandje</a>";
 				
 		if(isset($_SESSION["winkelwagen"]) == false ) $_SESSION["winkelwagen"] = [];
 		$producten = $_SESSION["winkelwagen"];
