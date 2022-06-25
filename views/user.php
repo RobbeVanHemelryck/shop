@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php"; 	
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php"; 	
 	$user = UserModel::getUser($_GET["id"]); 
 ?>
 

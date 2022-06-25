@@ -4,7 +4,7 @@ Deze klasse dient voor het groeperen van dynamische HTML code
 --> 1 functie voor zowel GET's via PHP als via AJAX
 */
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 
 class ContentController{
 	static function makeProductHtml($product){

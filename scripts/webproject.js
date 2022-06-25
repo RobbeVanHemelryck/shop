@@ -1,4 +1,3 @@
-var URL = "https://projects.taltiko.com/shop/";
 var browsePagina = 1;
 $(function(){
 
@@ -30,7 +29,7 @@ $(function(){
 
 		$.ajax({
 	        type: "POST",
-	        url: URL + "controllers/RequestController.php",
+	        url: "/" + APP_PREFIX + "controllers/RequestController.php",
 	        data: {'winkelwagenAdd' : productId, 'ajax' : true},
 	        success: function(data) {
 	        	$("#nav-winkelmandje-dropdown").html(data);
@@ -77,7 +76,7 @@ $(function(){
 		var id = this.id;
 		$.ajax({
 	        type: "POST",
-	        url: URL + "controllers/RequestController.php",
+	        url: "/" + APP_PREFIX + "controllers/RequestController.php",
 	        data: {'sortMethod' : id, 'filters' : filters},
 	        success: function(data) {
 	        	$(".producten-cont").html(data);
@@ -118,7 +117,7 @@ $(function(){
 	function getBrowseHtml(pagina){
 		$.ajax({
 	        type: "POST",
-	        url: URL + "controllers/RequestController.php",
+	        url: "/" + APP_PREFIX + "controllers/RequestController.php",
 	        data: {'onlyFilter' : true, 'filters' : window.filters, 'pagina' : pagina, 'perPagina' : 12},
 	        success: function(data) {
 	        	data = JSON.parse(data);

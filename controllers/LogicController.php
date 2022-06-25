@@ -1,6 +1,6 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 
 class LogicController{
 	static function getUitgelichteProducten(){
@@ -99,7 +99,6 @@ class LogicController{
 	}
 
 	public static function addReview($review){
-		echo "haha";
 		//nieuw gem = ((huidig gemiddelde * aantal) + ingevoerd gemiddelde)/aantal + 1
 	    $product = ProductModel::getProduct($review->product_id);
 	    $avgRating = $product->rating;

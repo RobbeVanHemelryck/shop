@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 
 	//Checken of de user ingelogd wou blijven
 	if(!isset($_SESSION["user"]) && isset($_COOKIE["saved-login"])){
@@ -71,3 +71,7 @@
 
 	</div>
 </div>
+
+<script>
+  var APP_PREFIX = <?php echo APP_PREFIX ?>;
+</script>

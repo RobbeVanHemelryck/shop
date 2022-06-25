@@ -1,8 +1,8 @@
 <?php
 
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 
-	define('URL', 'https://projects.taltiko.com/shop/');
+	define('URL', 'http://localhost:8090/');
 	if(isset($_SERVER['HTTP_REFERER'])){
 		define('PREV_URL', str_replace(URL, "", $_SERVER['HTTP_REFERER']));
 	}
@@ -461,7 +461,7 @@
 	    $prijs = $_POST["add-product-prijs"];
 	    $categorie = $_POST["add-product-categorie"];
 	    $beschrijving = $_POST["add-product-beschrijving"];
-	    $uitgelicht = ($_POST["edit-product-uitgelicht"] == "true")? 1: 0;
+	    $uitgelicht = ($_POST["add-product-uitgelicht"] == "true")? 1: 0;
 		$datum_toegevoegd = date("Y-m-d H:i:s", time());
 		$img_path = null;
 

@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 	$originalProduct = ProductModel::getProduct($_GET["id"]);
 	if(!$originalProduct) Utils::notify('404.php');
 	$deleted = ($originalProduct->active == 0)? true : false;
