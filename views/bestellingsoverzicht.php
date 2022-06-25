@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 	$bestelling = BestellingModel::getBestelling($_GET['id']);
 	Utils::authorize([], "index.php", $bestelling->user_id);
 ?>
@@ -47,8 +47,8 @@
 					$productTotal = $product->prijs * $aantal;
 
 					$html = "<div class='overview-product-cont'>"
-								. "<a class='overview-product-link' href='" . URL . "views/detail.php?id=" . $product->id . "' title='Bekijk " . $product->naam . "'>"
-									. "<img src='" . URL . "resources/images/" . $product->img_path . "' class='overview-product-thumb'>"
+								. "<a class='overview-product-link' href='/views/detail.php?id=" . $product->id . "' title='Bekijk " . $product->naam . "'>"
+									. "<img src='/resources/images/" . $product->img_path . "' class='overview-product-thumb'>"
 									. "<div class='overview-product-naam'>" . $product->naam . "</div></a>"
 								. "<div class='overview-product-prijscont'>"
 									. "<div class='bestelling-product-prijsdata'><tekst>Aantal</tekst><data>" . $aantal . "</data></div>"

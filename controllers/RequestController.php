@@ -1,10 +1,10 @@
 <?php
 
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 
-	define('URL', 'https://projects.taltiko.com/shop/');
+	// define('URL', 'https://projects.taltiko.com/shop/');
 	if(isset($_SERVER['HTTP_REFERER'])){
-		define('PREV_URL', str_replace(URL, "", $_SERVER['HTTP_REFERER']));
+		define('PREV_URL', 'index.php'));
 	}
 	else{
 		define('PREV_URL', 'index.php');
@@ -33,7 +33,7 @@
 			echo ContentController::makeWinkelmandjePreviewHtml();
 
 			if(!isset($_POST["ajax"])){
-				header("Location: " . URL .  PREV_URL);
+				header("Location: " . PREV_URL);
 			}
 		}
 		
@@ -110,7 +110,7 @@
 			if(password_verify($_POST["password"], $user->password)){
 				$_SESSION["user"] = $user;
 				
-				$url = str_replace(URL, "", $_SESSION["login-prev"]); 
+				$url = $_SESSION["login-prev"]; 
 				unset($_SESSION["login-prev"]);
 
 				//De user in een cookie steken opdat hij ingelogd kan blijven

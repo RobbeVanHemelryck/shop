@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 	Utils::authorize([0,1], "index.php");
 ?>
 
@@ -35,8 +35,8 @@
 							$total += $productTotal;
 
 							$html = "<div class='overview-product-cont'>"
-										. "<a class='overview-product-link' href='" . URL . "views/detail.php?id=" . $product->id . "' title='Bekijk " . $product->naam . "'>"
-											. "<img src='" . URL . "resources/images/" . $product->img_path . "' class='overview-product-thumb'>"
+										. "<a class='overview-product-link' href='/views/detail.php?id=" . $product->id . "' title='Bekijk " . $product->naam . "'>"
+											. "<img src='/resources/images/" . $product->img_path . "' class='overview-product-thumb'>"
 											. "<div class='overview-product-naam'>" . $product->naam . "</div></a>"
 										. "<div class='overview-product-prijscont'>"
 											. "<div class='overview-product-form'>"
@@ -49,7 +49,7 @@
 											. "</div>"
 											. "<div class='overview-product-totaalprijs'><tot>Totaal</tot><prijs>€ " . $productTotal . "</prijs></div>"
 										. "</div>"
-										. "<form action='" . URL . "controllers/RequestController.php' method='POST'>"
+										. "<form action='/controllers/RequestController.php' method='POST'>"
 											. "<input type='hidden' value='" . $product->id . "' name='winkelmandje-delete-id'>"
 											. "<input type='submit' class='overview-product-delete' value='Verwijder'>"
 										. "</form>"
@@ -62,7 +62,7 @@
 						echo '<div class="clearfix"></div>';
 
 						if(!isset($_GET["afrekenen"])){
-							echo "<a href='" . URL . "views/winkelmandje.php?afrekenen' id='overview-afrekenen' class='button-green'>Afrekenen</a>";
+							echo "<a href='/views/winkelmandje.php?afrekenen' id='overview-afrekenen' class='button-green'>Afrekenen</a>";
 						}
 						else{
 							?>

@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 	$originalProduct = ProductModel::getProduct($_GET["id"]);
 	if(!$originalProduct) Utils::notify('404.php');
 	$deleted = ($originalProduct->active == 0)? true : false;
@@ -27,7 +27,7 @@
 				$cat = CategorieModel::getCategorie($product->categorie);
 				$html = "<div id='product-detail-naam' class='scroll-none'>" . $product->naam . "</div>"
 					   . "<div id='product-detail-cont'>"
-					   . "<img src='" . URL . "resources/images/" . $product->img_path . "' id='product-detail-img-main'>"
+					   . "<img src='/resources/images/" . $product->img_path . "' id='product-detail-img-main'>"
 					   . "<div id='product-detail-info-cont'>"
 
 					   . "<div class='product-detail-info-subcont'>" 
@@ -40,9 +40,9 @@
 						
 						if($product->aantal_ratings > 0){
 							for($j = 0; $j < 5; $j++){
-								if($rating > 1.5) $html .= "<img src='" . URL . "resources/images/star-full.png' class='product-detail-star'>";
-								else if($rating > 0.5 && $rating <= 1.5) $html .= "<img src='" . URL . "resources/images/star-half.png' class='product-detail-star'>";
-								else if($rating <= 0.5) $html .= "<img src='" . URL . "resources/images/star-empty.png' class='product-detail-star'>";
+								if($rating > 1.5) $html .= "<img src='/resources/images/star-full.png' class='product-detail-star'>";
+								else if($rating > 0.5 && $rating <= 1.5) $html .= "<img src='/resources/images/star-half.png' class='product-detail-star'>";
+								else if($rating <= 0.5) $html .= "<img src='/resources/images/star-empty.png' class='product-detail-star'>";
 								$rating -= 2;
 							}
 							$html .= "(" . $product->aantal_ratings . ")";
@@ -125,7 +125,7 @@
 									echo "<input class='button-blue' type='submit'>";
 								}
 								else{
-									echo "<a href='" . URL . "views/login.php' class='button-blue button-blue-disabled'>Meld je eerst aan</a>";
+									echo "<a href='/views/login.php' class='button-blue button-blue-disabled'>Meld je eerst aan</a>";
 								}
 								echo "<input type='hidden' name='product_ID' value='".$originalProduct->id."'>";
 							

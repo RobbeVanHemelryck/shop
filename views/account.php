@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php";
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php";
 	Utils::authorize([0,1], "index.php");
 ?>
 
@@ -25,7 +25,7 @@
 						<div class="img-height-helper">
 							<?php
 								$user = $_SESSION["user"];
-								echo "<img id='account-avatar' src='" . URL . "resources/images/avatars/" . $user->img_path . "'>";
+								echo "<img id='account-avatar' src='/resources/images/avatars/" . $user->img_path . "'>";
 							?>
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 							<div class="img-height-helper">
 								<?php
 									$user = $_SESSION["user"];
-									echo "<img id='account-avatar' src='" . URL . "resources/images/avatars/" . $user->img_path . "'>";
+									echo "<img id='account-avatar' src='/resources/images/avatars/" . $user->img_path . "'>";
 								?>
 							</div>
 							<input type="file" name="avatar">

@@ -1,5 +1,5 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . "/shop/includes.php"; 	
+	include_once $_SERVER['DOCUMENT_ROOT'] . "/includes.php"; 	
 	$user = UserModel::getUser($_GET["id"]); 
 ?>
 
@@ -23,7 +23,7 @@
 				<div id="account-avatar-cont">
 					<div class="img-height-helper">
 						<?php
-							echo "<img id='account-avatar' src='" . URL . "resources/images/avatars/" . $user->img_path . "'>";
+							echo "<img id='account-avatar' src='/resources/images/avatars/" . $user->img_path . "'>";
 						?>
 					</div>
 				</div>
